@@ -1,0 +1,243 @@
+@font-face {
+  font-family: "Hanken";
+  src: url("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+}
+
+:root {
+  /* primary */
+  --light-red: hsl(0, 100%, 67%);
+  --light-red-transparent: hsla(0, 100%, 67%, 10%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --orangey-yellow-transparent: hsla(39, 100%, 56%, 10%);
+  --green-teal: hsl(166, 100%, 37%); 
+  --green-teal-transparent: hsla(166, 100%, 37%, 10%); 
+  --cobalt-blue: hsl(234, 85%, 45%);
+  --cobalt-blue-transparent: hsla(234, 85%, 45%, 10%);
+
+  /* gradient */
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* neutral */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray: hsl(224, 30%, 27%);
+
+  --paragraph: 1.125rem;
+  
+  /* font weights */
+  --weight-500: 500;
+  --weight-700: 700;
+  --weight-800: 800;
+}
+
+/* general */
+
+main {
+  font-weight: var(--weight-500);
+  font-family: "Hanken";
+}
+
+.result {
+  background-image: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+  color: var(--white);
+}
+
+.result > h2 {
+  color: var(--light-lavender);
+  text-transform: capitalize;
+}
+
+.circle > p {
+  color: var(--light-lavender);
+}
+
+.result > p {
+  color: var(--light-lavender);
+}
+
+button {
+  color: var(--white);
+  background-color: var(--dark-gray);
+  padding: 0.8rem 0;
+  text-align: center;
+  border-radius: 0.6rem;
+  border: none;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul > li:nth-child(1) {
+  background-color: var(--light-red-transparent);
+  color: var(--light-red);
+}
+
+ul > li:nth-child(2) {
+  background-color: var(--orangey-yellow-transparent);
+  color: var(--orangey-yellow);
+}
+
+ul > li:nth-child(3) {
+  background-color: var(--green-teal-transparent);
+  color: var(--green-teal);
+}
+
+ul > li:nth-child(4) {
+  background-color: var(--cobalt-blue-transparent);
+  color: var(--cobalt-blue);
+}
+
+li {
+  display: flex;
+  padding: 0.8rem 1rem;
+  border-radius: 0.6rem;
+}
+
+li > div {
+  margin-left: auto;
+  right: 0;
+  color: var(--light-lavender);
+}
+
+b {
+  color: var(--dark-gray)
+}
+
+/* 375px */
+@media (orientation: portrait) {
+  .result {
+    text-align: center;
+    border-radius: 0 0 25px 25px;
+    padding: 1rem 3.5rem;
+    color: var(--white)
+  }
+
+  .result > h2 {
+    color: var(--white);
+    margin: 0.4rem 0;
+  }
+
+  .result > p {
+    margin-bottom: 1.5rem;
+  }
+
+  .circle {
+    background-image: linear-gradient(var(--violet-blue), var(--persian-blue));
+    border-radius: 100%;
+    max-width: 35vw;
+    height: 35vw;
+
+    margin: 1rem auto 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .circle > h1 {
+    font-size: 3.4rem;
+  }
+
+  .summary {
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .summary > h2 {
+    font-size: 1.1rem;
+  }
+
+  ul > * {
+    margin: 1rem 0;
+  }
+
+  ul > li > img {
+    margin-right: 1rem;
+  }
+}
+
+/* 1440px */
+@media (min-width: 1440px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+
+    margin: auto;
+    border-radius: 1.5rem;
+    box-shadow: 5px 10px 10px 10px var(--cobalt-blue-transparent);
+  }
+
+  main > * {
+    flex: 1;  
+    width: 100%;
+    padding: 1.6rem 2rem;
+  }
+
+  .result {
+    border-radius: 1.5rem;
+    text-align: center;
+  }
+
+  .result > h2:first-child {
+    font-size: 1rem;
+  }
+
+  .result > .circle > h1 {
+    font-size: 2.8rem
+  }
+  
+  .result > h3 {
+    font-size: 1.5rem;
+    margin: 0.8rem 1.2rem
+  }
+
+  .result > p {
+    font-size: 0.95rem;
+  }
+
+  .circle {
+    background-image: linear-gradient(var(--violet-blue), var(--persian-blue));
+    border-radius: 100%;
+    width: 8.875rem;
+    height: 8.875rem;
+
+    margin: 1rem auto 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ul > li {
+    margin: 0.8rem 0;
+  }
+
+  .summary > h2 {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    margin: 1.4rem 0 1rem;
+    border-radius: 3rem;
+  }
+}
